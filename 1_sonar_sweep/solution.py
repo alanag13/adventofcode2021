@@ -9,11 +9,11 @@ part_one = part_two = 0
 
 for i in range(len(nums)):
 
-    prev_sum = curr_sum
-    curr_sum += nums[i]
-
     if i > 0 and nums[i] > nums[i-1]:
         part_one += 1
+
+    prev_sum = curr_sum
+    curr_sum += nums[i]
 
     if i > 2:
         curr_sum -= nums[i-3]
