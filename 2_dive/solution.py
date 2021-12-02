@@ -9,10 +9,8 @@ curr_aim = curr_depth = curr_horiz = 0
 for direction, num in actions:
 
     if direction in {"up", "down"}:
-        if direction == "up":
-            curr_aim -= int(num)
-        else:
-            curr_aim += int(num)
+        aim_change = int(num) if direction == "down" else int(num) * -1
+        curr_aim += aim_change
     else:
         curr_horiz += int(num)
         curr_depth += (curr_aim) * int(num)
